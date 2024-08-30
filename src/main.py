@@ -1,17 +1,15 @@
 import random
+import schedule
 import os
 from misskey import Misskey
-import requests
-from dotenv import load_dotenv
-from datetime import time, timezone, timedelta
+import time
 
 import Levenshtein
 from difflib import SequenceMatcher
 
-
-misskey = Misskey('https://cherrypick.31517.jp')
-misskey.token = os.environ['TOKEN']
-
+# 初期設定
+misskey = Misskey('https://cherrypick.31517.jp') # 使用しているinstance
+misskey.token = os.environ['TOKEN'] # TOKEN（環境変数）
 
 def generate_text(CC):
     current_char = CC
@@ -58,5 +56,11 @@ def nokogenPost():
 
     posttext = f"{generatedtext}\n一致率: {gestalt_ans}"
     misskey.notes_create(text=posttext)
+    print(f"{generatedtext}")
 
-nokogenPost()
+#　定期実行の設定
+schedule.every(10).minutes.do(nokogenPost)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
