@@ -8,7 +8,7 @@ import Levenshtein
 from difflib import SequenceMatcher
 
 # 初期設定
-URL = 'YOUR_SERVER_URL'
+URL = 'https://cherrypick.31517.jp'
 TOKEN = os.getenv('TOKEN')
 
 misskey = Misskey(URL)
@@ -61,9 +61,4 @@ def nokogenPost():
     misskey.notes_create(text=posttext)
     print(f"{generatedtext}")
 
-#　定期実行の設定
-schedule.every(10).minutes.do(nokogenPost)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+nokogenPost()
