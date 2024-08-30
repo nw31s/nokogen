@@ -1,8 +1,5 @@
 import random
 
-import Levenshtein
-from difflib import SequenceMatcher
-
 def generate_text(CC):
     current_char = CC
     text = current_char
@@ -23,29 +20,6 @@ def generate_text(CC):
         current_char = next_char
 
     return text
-
-def debug():
-    dtxt = "しかのこのこのここしたんたん"
-    return dtxt
-
-# def deerchecker(input):
-    colorlist = ['0xf64666', '0x714a27', '0x96c022', '0x6d61ca', '0xfbaa09']
-    
-    length = len(input)
-
-    gestalt = SequenceMatcher(None, 'しかのこのこのここしたんたん', input).ratio()
-    levenshtein = Levenshtein.distance('しかのこのこのここしたんたん', input)
-    #perf = input.count('しかのこのこのここしたんたん')
-    tango_shikanoko = input.count('しかのこ')
-    tango_nokonoko = input.count('のこのこ')
-    tango_koshitantan = input.count('こしたんたん')
-    char_shi = input.count('し')
-    char_ka = input.count('か')
-    char_no = input.count('の')
-    char_ko = input.count('こ')
-    char_ta = input.count('た')
-    char_nn = input.count('ん')
-    return gestalt, levenshtein, length, tango_shikanoko, tango_nokonoko, tango_koshitantan, char_shi, char_ka, char_no, char_ko, char_ta, char_nn
 
 detc = int(input("試行回数を入力してください: "))
 count = 0
