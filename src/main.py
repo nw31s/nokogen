@@ -67,4 +67,4 @@ def nokogenPost():
 
 while True:
     nokogenPost()
-    time.sleep(900000)
+    time.sleep(900)
