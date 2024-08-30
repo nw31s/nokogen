@@ -54,4 +54,6 @@ def nokogenPost():
     posttext = f"{generatedtext}\n一致率: {gestalt_ans}"
     print(f"{posttext}")
 
-nokogenPost()
+while True:
+    nokogenPost()
+    time.sleep(900000)
