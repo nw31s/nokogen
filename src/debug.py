@@ -8,8 +8,8 @@ import Levenshtein
 from difflib import SequenceMatcher
 
 # 初期設定
-URL = 'cherrypick.31517.jp'
-TOKEN = os.environ['TOKEN']
+URL = 'https://cherrypick.31517.jp'
+TOKEN = os.getenv('TOKEN')
 
 misskey = Misskey(URL)
 misskey.token = TOKEN
@@ -61,4 +61,4 @@ def nokogenPost():
     misskey.notes_create(text=posttext)
     print(f"{generatedtext}")
 
-nokogenPost
+nokogenPost()
