@@ -8,8 +8,11 @@ import Levenshtein
 from difflib import SequenceMatcher
 
 # 初期設定
-misskey = Misskey('https://cherrypick.31517.jp') # 使用しているinstance
-misskey.token = os.environ['TOKEN'] # TOKEN（環境変数）
+URL = 'YOUR_SERVER_URL'
+TOKEN = os.environ['TOKEN']
+
+misskey = Misskey(URL)
+misskey.token = TOKEN
 
 def generate_text(CC):
     current_char = CC
