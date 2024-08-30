@@ -9,7 +9,7 @@ from difflib import SequenceMatcher
 
 # 初期設定
 URL = 'YOUR_SERVER_URL'
-TOKEN = os.environ['TOKEN']
+TOKEN = os.getenv('TOKEN')
 
 misskey = Misskey(URL)
 misskey.token = TOKEN
