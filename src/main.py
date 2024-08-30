@@ -9,7 +9,7 @@ import Levenshtein
 from difflib import SequenceMatcher
 
 # 初期設定
-with open('config.yml', 'r') as yml:
+with open('config.yaml', 'r') as yml:
     config = yaml.safe_load(yml)
 
 URL = config['Misskey']['url']
