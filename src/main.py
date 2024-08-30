@@ -61,4 +61,6 @@ def nokogenPost():
     misskey.notes_create(text=posttext)
     print(f"{generatedtext}")
 
-nokogenPost()
+while True:
+    nokogenPost()
+    time.sleep(900000)
