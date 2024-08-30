@@ -1,18 +1,12 @@
 import random
 import schedule
 import os
-from misskey import Misskey
 import time
 
 import Levenshtein
 from difflib import SequenceMatcher
 
 # 初期設定
-URL = 'https://cherrypick.31517.jp'
-TOKEN = os.getenv('TOKEN')
-
-misskey = Misskey(URL)
-misskey.token = TOKEN
 
 def generate_text(CC):
     current_char = CC
@@ -54,11 +48,10 @@ def deerchecker(input):
     return gestalt, levenshtein, length, tango_shikanoko, tango_nokonoko, tango_koshitantan, char_shi, char_ka, char_no, char_ko, char_ta, char_nn
 
 def nokogenPost():
-    generatedtext = generate_text('し')
+    generatedtext = "しかのこのこのここしたんたん"
     gestalt_ans = deerchecker(generatedtext)[0]
 
     posttext = f"{generatedtext}\n一致率: {gestalt_ans}"
-    misskey.notes_create(text=posttext)
-    print(f"{generatedtext}")
+    print(f"{posttext}")
 
 nokogenPost()
