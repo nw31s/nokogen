@@ -3,13 +3,17 @@ import schedule
 import os
 from misskey import Misskey
 import time
+import yaml
 
 import Levenshtein
 from difflib import SequenceMatcher
 
 # 初期設定
-URL = 'https://cherrypick.31517.jp'
-TOKEN = os.getenv('TOKEN')
+with open('config.yml', 'r') as yml:
+    config = yaml.safe_load(yml)
+
+URL = config['Misskey']['url']
+TOKEN = config['Misskey']['token']
 
 misskey = Misskey(URL)
 misskey.token = TOKEN
