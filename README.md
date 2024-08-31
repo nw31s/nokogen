@@ -1,6 +1,7 @@
 # nokogen
 確率に基づき文章を生成します  
 影響を受けた動画: https://www.youtube.com/watch?v=Xkq13ZthmA0  
+実運用中のアカウント: https://cherrypick.31517.jp/@deer  
 
 ## 環境
 * 任意の名前で仮想環境を構築してください  
