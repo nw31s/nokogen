@@ -1,4 +1,5 @@
 *.env
 *.venv
 config.yaml
-nohup.out
+*nohup.out
+*debug.py
