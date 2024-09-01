@@ -62,7 +62,7 @@ def nokogenPost():
     gestalt_ans = deerchecker(generatedtext)[0]
 
     posttext = f"{generatedtext}\n一致率: {gestalt_ans}"
-    misskey.notes_create(text=posttext)
+    misskey.notes_create(text=posttext, visibility='home')
     print(f"{generatedtext}")
 
 while True:
